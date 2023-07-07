@@ -10,12 +10,6 @@
 
     <dependencies>
         <dependency>
-            <!-- jsoup HTML parser library @ https://jsoup.org/ -->
-            <groupId>org.jsoup</groupId>
-            <artifactId>jsoup</artifactId>
-            <version>1.15.4</version>
-        </dependency>
-        <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>4.4.0</version>
@@ -24,11 +18,6 @@
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-http-jdk-client</artifactId>
             <version>4.5.0</version>
-        </dependency>
-        <dependency>
-            <groupId>org.jsoup</groupId>
-            <artifactId>jsoup</artifactId>
-            <version>1.16.1</version>
         </dependency>
         <dependency>
             <groupId>commons-io</groupId>
