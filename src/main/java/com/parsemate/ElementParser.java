@@ -1,4 +1,4 @@
-package org.example;
+package com.parsemate;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -35,15 +35,15 @@ public class ElementParser {
         return elementValue;
     }
 
-    public String parseElementByTagAndAttribute(WebDriver driver, String url, String tag, String attribute) {
+    public String parseElementByTagAndAttribute(WebDriver driver, String url, String tagName, String attributeName) {
         driver.get(url);
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-        WebElement tagElement = driver.findElement(By.tagName(tag));
-        String elementValue = tagElement.getAttribute(attribute);
+        WebElement tagElement = driver.findElement(By.tagName(tagName));
+        String elementValue = tagElement.getAttribute(attributeName);
         driver.quit();
         return elementValue;
     }

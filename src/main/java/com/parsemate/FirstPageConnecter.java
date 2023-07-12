@@ -1,10 +1,6 @@
-package org.example;
+package com.parsemate;
 
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
 import org.openqa.selenium.WebDriver;
-
-import java.io.IOException;
 
 public class FirstPageConnecter {
 

@@ -1,20 +1,21 @@
-package org.example;
+package com.parsemate;
+
+import org.openqa.selenium.WebDriver;
 
 public class Main {
     public static void main(String[] args) {
 
         BrowserSetter browserConnecter = new BrowserSetter();
         FirstPageConnecter firstPageConnecter = new FirstPageConnecter();
-        Paginator paginator = new Paginator();
         GetPagesToParseLinks findAllPagesToParseLinks = new GetPagesToParseLinks();
         ElementParser elementParser = new ElementParser();
 
-        // WebDriver driver = browserSetter.setBrowserDriver();
+         WebDriver driver = browserConnecter.setBrowserDriver();
 
-        // firstPageConnecter.connectToFirstPage("https://zhongchou.modian.com/all/top_comment/all/1", driver);
-        // findAllPagesToParseLinks.getPagesToParseLinks(driver, 3);
+         firstPageConnecter.connectToFirstPage("https://zhongchou.modian.com/all/top_comment/all/1", driver);
+         findAllPagesToParseLinks.getPagesToParseLinks(driver, 2, "pc_ga_pro_index_17", "a");
 
-        // driver.quit();
+         driver.quit();
 
 
 

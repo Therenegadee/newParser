@@ -1,4 +1,4 @@
-package org.example;
+package com.parsemate;
 
 
 import org.openqa.selenium.WebDriver;
