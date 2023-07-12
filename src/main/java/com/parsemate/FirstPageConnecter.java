@@ -7,6 +7,7 @@ public class FirstPageConnecter {
     FirstPageConnecter () {}
 
     public void connectToFirstPage (String urlForFirstPage, WebDriver driver) {
+
         driver.get(urlForFirstPage);
     }
 }

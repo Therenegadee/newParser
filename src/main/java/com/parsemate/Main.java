@@ -7,18 +7,14 @@ public class Main {
 
         BrowserSetter browserConnecter = new BrowserSetter();
         FirstPageConnecter firstPageConnecter = new FirstPageConnecter();
-        GetPagesToParseLinks findAllPagesToParseLinks = new GetPagesToParseLinks();
+        PagesToParseLinksGetter findAllPagesToParseLinks = new PagesToParseLinksGetter();
         ElementParser elementParser = new ElementParser();
 
-         WebDriver driver = browserConnecter.setBrowserDriver();
+        WebDriver driver = browserConnecter.setBrowserDriver();
 
-         firstPageConnecter.connectToFirstPage("https://zhongchou.modian.com/all/top_comment/all/1", driver);
-         findAllPagesToParseLinks.getPagesToParseLinks(driver, 2, "pc_ga_pro_index_17", "a");
+        firstPageConnecter.connectToFirstPage("https://zhongchou.modian.com/all/top_comment/all/1", driver);
+        findAllPagesToParseLinks.getPagesToParseLinks(driver, 2, "pc_ga_pro_index_17", "a");
 
-         driver.quit();
-
-
-
-
+        driver.quit();
     }
 }
