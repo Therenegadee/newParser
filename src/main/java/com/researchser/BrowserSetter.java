@@ -1,4 +1,4 @@
-package com.parsemate;
+package com.researchser;
 
 
 import org.openqa.selenium.WebDriver;
@@ -8,8 +8,6 @@ import org.openqa.selenium.safari.SafariDriver;
 
 public class BrowserSetter {
 
-    BrowserSetter() {
-    }
 
     public WebDriver setBrowserDriver() {
         System.setProperty("webdriver.http.factory", "jdk-http-client");

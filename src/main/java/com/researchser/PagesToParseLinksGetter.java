@@ -1,4 +1,4 @@
-package com.parsemate;
+package com.researchser;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.StaleElementReferenceException;
@@ -12,22 +12,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PagesToParseLinksGetter {
-    PagesToParseLinksGetter() {
-    }
 
-    public List<String> getPagesToParseLinks(WebDriver driver, int numberOfPagesToParse, String className, String tagName) {
+    public List<String> getPagesToParseLinks(WebDriver driver, int numberOfPagesToParse, String className, String tagName, String cssSelectorNextPage) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10L));
         Paginator paginator = new Paginator();
         List<String> linksToPagesForParse = new ArrayList<>();
 
-        List<WebElement> webElementList = new ArrayList<>();
-
         for (int i = 0; i < numberOfPagesToParse; i++) {
             wait.until(ExpectedConditions.visibilityOfElementLocated(By.className(className)));
-            List<WebElement> webElementsAddInList = driver.findElements(By.className(className));
-            for (WebElement element : webElementsAddInList) {
-                webElementList.add(element);
-            }
+            List<WebElement> webElementList = driver.findElements(By.className(className));
             for (WebElement element : webElementList) {
                 try {
                     WebElement linkElement = element.findElement(By.tagName(tagName));
@@ -40,10 +33,9 @@ public class PagesToParseLinksGetter {
                 }
             }
 
-            webElementsAddInList.clear();
             webElementList.clear();
 
-            paginator.clickNextPageButton(driver, "body > div > div.pro_field > div > div > a.next");
+            paginator.clickNextPageButton(driver, cssSelectorNextPage);
         }
         System.out.println(linksToPagesForParse);
         return linksToPagesForParse;

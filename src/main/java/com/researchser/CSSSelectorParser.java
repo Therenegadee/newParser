@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class CSSSelectorParser implements SearchElementParserStrategy {
+public class CSSSelectorParser implements OneParameterParserInterface {
 
     private final WebDriver driver;
 
@@ -17,7 +17,7 @@ public class CSSSelectorParser implements SearchElementParserStrategy {
     }
 
     @Override
-    public String parseByParameters(String url, String cssSelector, String parameter2) {
+    public String parseByParameters(String url, String cssSelector) {
             driver.get(url);
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10L));
             wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(cssSelector)));
