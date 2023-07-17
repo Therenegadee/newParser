@@ -1,4 +1,4 @@
-package com.researchser;
+package com.researchser.browserActions;
 
 
 import org.openqa.selenium.WebDriver;

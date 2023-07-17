@@ -1,5 +1,6 @@
-package com.researchser;
+package com.researchser.elementParser.settingsForParsing;
 
+import com.researchser.browserActions.Paginator;
 import org.openqa.selenium.By;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;

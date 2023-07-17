@@ -1,5 +1,7 @@
-package com.researchser;
+package com.researchser.elementParser.htmlElementParser;
 
+import com.researchser.elementParser.abstractInterfaces.AbstractParseAlgorithm;
+import com.researchser.elementParser.abstractInterfaces.AbstractParseParameter;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -8,7 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class TagAttrParser implements TwoParametersParserInterface {
+public class TagAttrParser implements AbstractParseAlgorithm {
 
     private final WebDriver driver;
 
@@ -16,9 +18,12 @@ public class TagAttrParser implements TwoParametersParserInterface {
         this.driver = driver;
     }
 
+
     @Override
-    public String parseByParameters(String url, String tagName, String attributeName) {
-        driver.get(url);
+    public String parseByParameters(AbstractParseParameter abstractParseParameter, String url) {
+        TwoParseParameters twoParseParameters = (TwoParseParameters) abstractParseParameter;
+        String tagName = twoParseParameters.getParameter1();
+        String attributeName = twoParseParameters.getParameter2();
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10L));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.tagName(tagName)));
         try {
@@ -28,7 +33,6 @@ public class TagAttrParser implements TwoParametersParserInterface {
         }
         WebElement tagElement = driver.findElement(By.tagName(tagName));
         String elementValue = tagElement.getAttribute(attributeName);
-        driver.quit();
         return elementValue;
     }
 }
