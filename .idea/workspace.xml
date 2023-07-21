@@ -4,23 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cfaa9128-7095-4fbd-ad5d-08dfe1a10721" name="Changes" comment="2.3.1. Added second interface and tag+atrr method">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/researchser/elementParser/htmlElementParser/XPathParser.java" afterDir="false" />
+    <list default="true" id="cfaa9128-7095-4fbd-ad5d-08dfe1a10721" name="Changes" comment="2.4. Made parser applicable for launching. But still some problems with output: need to fix the final output list we get from ONE SPECIFIC URL LINK.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/researchser/BrowserSetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/researchser/browserActions/BrowserSetter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/researchser/CSSSelectorParser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/researchser/FirstPageConnecter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/researchser/browserActions/FirstPageConnecter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/researchser/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/researchser/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/researchser/OneParameterParserInterface.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/researchser/PagesToParseLinksGetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/researchser/elementParser/PagesToParseLinksGetter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/researchser/Paginator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/researchser/browserActions/Paginator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/researchser/ParseElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/researchser/elementParser/ParseElement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/researchser/ParseElementAdder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/researchser/elementParser/ParseElementAdder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/researchser/ParseElementsLauncher.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/researchser/ParserApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/researchser/elementParser/ParserApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/researchser/TagAttrParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/researchser/elementParser/htmlElementParser/TagAttrParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/researchser/TwoParametersParserInterface.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/researchser/XPathParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/researchser/elementParser/htmlElementParser/CSSSelectorParser.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,6 +55,11 @@
     "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.researchser.elementParser.htmlElementParser" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.researchser.Main" />
@@ -148,7 +138,14 @@
       <option name="project" value="LOCAL" />
       <updated>1689269046485</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="2.4. Made parser applicable for launching. But still some problems with output: need to fix the final output list we get from ONE SPECIFIC URL LINK.">
+      <created>1689610633815</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1689610633815</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -170,7 +167,8 @@
     <MESSAGE value="2.2. Fixed error in PagesToParseLinksGetter (prev. GetPagesToParseLinks)" />
     <MESSAGE value="2.3. Added Strategy pattern for methods of Parsing. Added new classes 1) add parse elements; 2) launcher of the parser (parser application)." />
     <MESSAGE value="2.3.1. Added second interface and tag+atrr method" />
-    <option name="LAST_COMMIT_MESSAGE" value="2.3.1. Added second interface and tag+atrr method" />
+    <MESSAGE value="2.4. Made parser applicable for launching. But still some problems with output: need to fix the final output list we get from ONE SPECIFIC URL LINK." />
+    <option name="LAST_COMMIT_MESSAGE" value="2.4. Made parser applicable for launching. But still some problems with output: need to fix the final output list we get from ONE SPECIFIC URL LINK." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

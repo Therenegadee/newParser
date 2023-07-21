@@ -1,33 +1,38 @@
 package com.researchser.elementParser;
 
-import com.researchser.browserActions.BrowserSetter;
-import com.researchser.browserActions.FirstPageConnecter;
+import com.researchser.browserSettings.browserSettings.Browser;
+import com.researchser.browserSettings.browserSettings.BrowserType;
+import com.researchser.browserSettings.browserSettings.OperatingSystem;
 import com.researchser.elementParser.htmlElementParser.ParseElement;
-import com.researchser.elementParser.settingsForParsing.PagesToParseLinksGetter;
-import com.researchser.elementParser.settingsForParsing.ParseElementAdder;
+import com.researchser.elementParser.settingsForParsing.LinksExtractor;
 import org.openqa.selenium.WebDriver;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class ParserApplication {
+
+    private static final Scanner SCANNER = new Scanner(System.in);
+
     public static void main(String[] args) {
-        BrowserSetter browserConnecter = new BrowserSetter();
-        FirstPageConnecter firstPageConnecter = new FirstPageConnecter();
-        PagesToParseLinksGetter pagesToParseLinksGetter = new PagesToParseLinksGetter();
-        ParseElementAdder parseElementAdder = new ParseElementAdder();
 
-        List<String> linksToPagesForParse = new ArrayList<>();
-        List<ParseElement> parsingTypes = new ArrayList<>();
+        LinksExtractor linksExtractor = new LinksExtractor();
 
-        WebDriver driver = browserConnecter.setBrowserDriver();
+        List<String> linksToPagesForParse;
+        List<ParseElement> parsingTypes;
 
-        firstPageConnecter.connectToFirstPage("https://zhongchou.modian.com/all/top_comment/all/1", driver);
 
-        linksToPagesForParse = pagesToParseLinksGetter.getPagesToParseLinks(driver, 2, "pc_ga_pro_index_17",
-                "a", "body > div > div.pro_field > div > div > a.next");
+        BrowserType browserType = BrowserType.chooseBrowserType();
+        OperatingSystem operatingSystem = OperatingSystem.chooseOperatingSystem();
 
-        parsingTypes = parseElementAdder.addElementsToParse(driver);
+        WebDriver driver = new Browser(browserType, operatingSystem).getDriver();
+
+        String firstPageURL = SCANNER.nextLine(); // https://zhongchou.modian.com/all/top_comment/all/1
+        driver.get(firstPageURL);
+
+        linksToPagesForParse = linksExtractor.getPagesToParseLinks(driver);
+
+        parsingTypes = ParseElement.addElementsToParse(driver);
 
         for (String link : linksToPagesForParse) {
                 driver.get(link);
