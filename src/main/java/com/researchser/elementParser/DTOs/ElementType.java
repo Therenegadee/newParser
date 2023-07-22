@@ -1,4 +1,4 @@
-package com.researchser.elementParser.htmlElementParser;
+package com.researchser.elementParser.DTOs;
 
 import java.util.Scanner;
 

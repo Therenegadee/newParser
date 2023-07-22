@@ -1,6 +1,5 @@
-package com.researchser.browserSettings.abstractInterfaces;
+package com.researchser.elementParser.browserSettings.DTOs;
 
-import com.researchser.browserSettings.browserSettings.OperatingSystem;
 import org.openqa.selenium.WebDriver;
 
 public interface AbstractBrowserSetter {

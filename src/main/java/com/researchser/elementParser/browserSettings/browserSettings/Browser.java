@@ -1,7 +1,9 @@
-package com.researchser.browserSettings.browserSettings;
+package com.researchser.elementParser.browserSettings.browserSettings;
 
 
-import com.researchser.browserSettings.abstractInterfaces.AbstractBrowserSetter;
+import com.researchser.elementParser.browserSettings.DTOs.AbstractBrowserSetter;
+import com.researchser.elementParser.browserSettings.DTOs.BrowserType;
+import com.researchser.elementParser.browserSettings.DTOs.OperatingSystem;
 import org.openqa.selenium.WebDriver;
 
 

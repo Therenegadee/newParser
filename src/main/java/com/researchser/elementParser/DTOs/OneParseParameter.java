@@ -1,6 +1,4 @@
-package com.researchser.elementParser.htmlElementParser;
-
-import com.researchser.elementParser.abstractInterfaces.AbstractParseParameter;
+package com.researchser.elementParser.DTOs;
 
 public class OneParseParameter implements AbstractParseParameter {
 

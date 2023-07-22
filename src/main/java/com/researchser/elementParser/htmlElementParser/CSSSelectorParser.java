@@ -1,7 +1,8 @@
 package com.researchser.elementParser.htmlElementParser;
 
-import com.researchser.elementParser.abstractInterfaces.AbstractParseAlgorithm;
-import com.researchser.elementParser.abstractInterfaces.AbstractParseParameter;
+import com.researchser.elementParser.DTOs.AbstractParseAlgorithm;
+import com.researchser.elementParser.DTOs.AbstractParseParameter;
+import com.researchser.elementParser.DTOs.OneParseParameter;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

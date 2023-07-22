@@ -1,4 +1,4 @@
-package com.researchser.browserSettings.browserSettings;
+package com.researchser.elementParser.browserSettings.DTOs;
 
 import java.util.Scanner;
 

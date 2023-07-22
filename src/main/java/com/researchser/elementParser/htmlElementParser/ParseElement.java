@@ -1,7 +1,6 @@
 package com.researchser.elementParser.htmlElementParser;
 
-import com.researchser.elementParser.abstractInterfaces.AbstractParseAlgorithm;
-import com.researchser.elementParser.abstractInterfaces.AbstractParseParameter;
+import com.researchser.elementParser.DTOs.*;
 import org.openqa.selenium.WebDriver;
 
 import java.util.*;
@@ -24,14 +23,14 @@ public class ParseElement {
         };
     }
 
-    public List<String> parseByParameters(String url) {
+    public String parseByParameters(String url) {
         return parameters
                 .stream()
                 .map(parameter -> abstractParseAlgorithm.parseByParameters(parameter, url))
-                .toList();
+                .toString();
     }
 
-    public static List<ParseElement> addElementsToParse(WebDriver driver) {
+    public static List<ParseElement> addElementsToParse(WebDriver driver, List<String> header) {
         String choice;
         do {
             System.out.println("Добавить метод парсинга? (да/нет)");
@@ -44,6 +43,7 @@ public class ParseElement {
                     String parameter = SCANNER.nextLine();
                     parameters.add(new OneParseParameter(parameter));
                     parsingMethodElements.add(new ParseElement(driver, type, parameters));
+                    ParseElement.addHeader(header);
                 } else if (type == ElementType.TAG_ATTR) {
                     List<AbstractParseParameter> parameters = new ArrayList<>();
                     System.out.println("Введите Tag элемента (без '<>'): ");
@@ -52,12 +52,14 @@ public class ParseElement {
                     String parameter2 = SCANNER.nextLine();
                     parameters.add(new TwoParseParameters(parameter1, parameter2));
                     parsingMethodElements.add(new ParseElement(driver, type, parameters));
+                    ParseElement.addHeader(header);
                 } else if (type == ElementType.CSS) {
                     List<AbstractParseParameter> parameters = new ArrayList<>();
                     System.out.println("Введите CSS Selector элемента: ");
                     String parameter = SCANNER.nextLine();
                     parameters.add(new OneParseParameter(parameter));
                     parsingMethodElements.add(new ParseElement(driver, type, parameters));
+                    ParseElement.addHeader(header);
                 } else {
                     System.out.println("Неверный ввод.");
                     continue;
@@ -66,5 +68,11 @@ public class ParseElement {
             }
         } while (choice.equalsIgnoreCase("да") && parsingMethodElements.size() < 6);
         return parsingMethodElements;
+    }
+
+    private static void addHeader (List<String> header) {
+        System.out.println("Введите Ваше название элемента: ");
+        String nameForHeader = SCANNER.nextLine();
+        header.add(nameForHeader);
     }
 }
